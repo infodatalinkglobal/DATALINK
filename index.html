@@ -78,7 +78,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 6vw;
 .mobmenu{display:none;position:fixed;inset:0;background:var(--ink);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:26px;color:#fff;font-family:var(--disp);font-size:28px;font-weight:700}
 .mobmenu.open{display:flex}
 .mobclose{position:absolute;top:22px;right:22px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:1100}
 
 /* hero */
 .hero{position:relative;color:#fff;padding:150px 0 90px;overflow:hidden;min-height:100vh;display:flex;align-items:center}
@@ -307,7 +306,6 @@ nav{border-bottom:1px solid var(--line)}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<div id="progress"></div>
 
 <div class="site-header" id="siteHeader">
   <nav id="nav">
@@ -659,7 +657,7 @@ nav{border-bottom:1px solid var(--line)}
   });
 
   var head=document.getElementById('siteHeader');
-  function onScroll(){var y=window.scrollY||window.pageYOffset;head.classList.toggle('scrolled',y>60);var h=document.body.scrollHeight-innerHeight;var p=document.getElementById('progress');if(p)p.style.width=(h>0?y/h*100:0)+'%';}
+  function onScroll(){var y=window.scrollY||window.pageYOffset;head.classList.toggle('scrolled',y>60);}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
   // background videos: wide screens + good connections only, load when near view, pause when off-screen
