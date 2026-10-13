@@ -42,7 +42,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
 :root{
-  --ink:#101322;--primary:#1A1A2A;--primary-2:#26283d;--accent:#0066FF;--accent-2:#4d94ff;
+  --ink:#101322;--primary:#1A1A2A;--primary-2:#26283d;--accent:#F2B705;--accent-2:#FFD65A;--atext:#8a6700;--green:#0E7C3A;--green-2:#2BB673;--red:#CE1126;
   --cream:#F8F9FA;--paper:#FFFFFF;--line:#e3e6ee;--muted:#5d6479;
   --shadow:0 18px 50px rgba(0,0,0,.14);--shadow-sm:0 8px 24px rgba(0,0,0,.10);
   --disp:'Plus Jakarta Sans',sans-serif;--body:'Inter',system-ui,sans-serif;
@@ -60,12 +60,12 @@ h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.05;letter-spacing
 .demo{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#7a5a00;background:#fff4d1;border:1px solid #f0dc9a;padding:1px 7px;border-radius:20px;text-transform:uppercase;vertical-align:middle}
 .wrap{max-width:1160px;margin:0 auto;padding:0 6vw}
 section{padding:96px 0}
-.label{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.label{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--atext);margin-bottom:14px;display:block}
 h2{font-size:clamp(34px,5vw,52px);margin-bottom:16px}
 .lead{color:var(--muted);font-size:18px;max-width:600px}
 .center{text-align:center}.center .lead{margin:0 auto}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:16px;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:.25s}
-.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#0050cc;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:var(--ink)}.btn-primary:hover{background:#d9a304;transform:translateY(-2px)}
 .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.12)}
 .btn-dark{border-color:var(--ink);color:var(--ink)}.btn-dark:hover{background:var(--ink);color:#fff}
 
@@ -79,9 +79,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 6vw;
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:20px}
 .logo svg{width:34px;height:34px}
 .navlinks{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
-.navlinks a:hover{color:var(--accent)}
-.navlinks .btn{padding:10px 20px;font-size:15px;color:#fff}
-.navlinks .btn:hover{color:#fff}
+.navlinks a:hover{color:var(--atext)}
+.navlinks .btn{padding:10px 20px;font-size:15px;color:var(--ink)}
+.navlinks .btn:hover{color:var(--ink)}
 .burger{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink)}
 .mobmenu{display:none;position:fixed;inset:0;background:var(--ink);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:26px;color:#fff;font-family:var(--disp);font-size:28px;font-weight:700}
 .mobmenu.open{display:flex}
@@ -102,7 +102,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 6vw;
 .hero h1 .hero-word{display:inline-block}
 .hero .sub{font-size:19px;color:#cfd4e6;max-width:560px;margin-bottom:24px}
 .bullets li{display:flex;gap:10px;margin-bottom:8px;color:#e6e9f5}
-.bullets i{color:var(--accent-2);margin-top:6px;font-size:14px}
+.bullets i{color:var(--green-2);margin-top:6px;font-size:14px}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 18px}
 .trustline{font-size:14px;color:#aab0c8}
 .formcard{background:var(--paper);color:var(--ink);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
@@ -118,7 +118,7 @@ form .btn{width:100%}
 .form-success i{font-size:44px;color:var(--accent);margin-bottom:12px}
 
 /* marquee */
-.marquee{background:var(--accent);color:#fff;overflow:hidden;padding:14px 0;font-weight:600;font-size:15px}
+.marquee{background:var(--accent);color:var(--ink);overflow:hidden;padding:14px 0;font-weight:600;font-size:15px}
 .marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 32s linear infinite}
 .marquee-track span::before{content:"\2726";margin-right:48px;opacity:.7}
 @keyframes scroll{to{transform:translateX(-50%)}}
@@ -128,8 +128,8 @@ form .btn{width:100%}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;transition:.3s}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
-.badge{width:52px;height:52px;border-radius:14px;background:rgba(0,102,255,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
-.card .n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.badge{width:52px;height:52px;border-radius:14px;background:rgba(242,183,5,.18);color:var(--atext);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+.card .n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--atext);text-transform:uppercase}
 .card h3{font-size:22px;margin:6px 0 8px}
 .card p{color:var(--muted);font-size:15.5px}
 
@@ -141,10 +141,10 @@ form .btn{width:100%}
 .svc .imgwrap img{transition:transform .6s}
 .svc:hover .imgwrap img{transform:scale(1.06)}
 .svc .body{padding:28px;position:relative;flex:1}
-.svc .badge{position:absolute;top:-26px;right:24px;background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
+.svc .badge{position:absolute;top:-26px;right:24px;background:var(--accent);color:var(--ink);box-shadow:var(--shadow-sm)}
 .svc h3{font-size:24px;margin-bottom:8px}
 .svc p{color:var(--muted);margin-bottom:14px}
-.svc a.more{color:var(--accent);font-weight:600;font-size:15px}
+.svc a.more{color:var(--atext);font-weight:600;font-size:15px}
 
 /* why */
 .whyus{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
@@ -155,14 +155,14 @@ form .btn{width:100%}
 .whyus .lead{color:#c3c9de}
 .checks{margin:30px 0 34px;display:grid;gap:12px}
 .checks li{display:flex;gap:12px;font-size:17px}
-.checks i{color:var(--accent-2);margin-top:6px}
+.checks i{color:var(--green-2);margin-top:6px}
 
 /* faq */
 .faq{background:var(--cream)}
 .faq-list{max-width:780px;margin:44px auto 0}
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
 .faq-q{width:100%;text-align:left;background:none;border:0;padding:20px 24px;font:600 17px var(--body);color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;gap:14px;align-items:center}
-.faq-q i{transition:transform .3s;color:var(--accent)}
+.faq-q i{transition:transform .3s;color:var(--atext)}
 .faq-item.open .faq-q i{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s}
 .faq-a p{padding:0 24px 22px;color:var(--muted)}
@@ -184,7 +184,7 @@ form .btn{width:100%}
 /* cta banner */
 .ctaband{text-align:center}
 .ctaband .lead{margin:0 auto 24px}
-.bigphone{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(30px,5vw,44px);color:var(--accent);margin:8px 0 26px}
+.bigphone{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(30px,5vw,44px);color:var(--atext);margin:8px 0 26px}
 
 /* contact */
 .contact{background:var(--ink);color:#fff}
@@ -196,20 +196,20 @@ form .btn{width:100%}
 .contact .formcard{padding:32px}
 
 /* footer */
-footer{background:var(--primary);color:#b9bfd6;border-top:4px solid var(--accent);padding:64px 0 0;font-size:15px}
+footer{background:var(--primary);color:#b9bfd6;border-top:0;position:relative;padding:68px 0 0;font-size:15px}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
 footer h4{color:#fff;font-family:var(--disp);margin-bottom:14px;font-size:16px}
 footer li{margin-bottom:9px}
 footer a:hover{color:#fff}
 .socials{display:flex;gap:12px;margin-top:16px}
 .socials a{width:38px;height:38px;border:1px solid #3a3d57;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.socials a:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .fbottom{margin-top:44px;border-top:1px solid #2f324b;padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13.5px}
 
 /* floating */
 .fab{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;flex-direction:column;gap:12px}
 .fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:var(--shadow);position:relative}
-.fab .wa{background:#25D366}.fab .call{background:var(--accent)}
+.fab .wa{background:#25D366}.fab .call{background:var(--accent);color:var(--ink)}
 .fab a::after{content:attr(data-tip);position:absolute;right:68px;background:var(--ink);color:#fff;font-size:13px;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
 .fab a:hover::after{opacity:1}
 
@@ -232,6 +232,14 @@ footer a:hover{color:#fff}
   .fab a::after{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.stripe{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red) 33.3%,var(--accent) 33.3% 66.6%,var(--green) 66.6%)}
+.packages{background:var(--cream)}
+.price{font-family:var(--disp);font-weight:800;font-size:38px;margin:8px 0 4px}
+.price small{font-size:15px;font-weight:500;color:var(--muted)}
+.pk ul{margin:18px 0 24px}.pk li{display:flex;gap:10px;margin-bottom:10px;color:var(--muted);font-size:15.5px}.pk li i{color:var(--green);margin-top:5px}
+.pk.feat{border:2px solid var(--accent);position:relative;box-shadow:var(--shadow-sm)}
+.pk.feat::before{content:"Most popular";position:absolute;top:-14px;left:28px;background:var(--accent);color:var(--ink);font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px}
+.pk .btn{width:100%}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -242,11 +250,11 @@ footer a:hover{color:#fff}
   <div class="topstrip"><span>Based in Accra, Ghana</span><span>Free 30-minute strategy call</span><span>Mobile Money and bank transfer accepted</span><span>Reply within 24 hours</span></div>
   <nav id="nav">
     <a href="#top" class="logo" aria-label="Datalink Global home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0066FF"/><circle cx="12" cy="20" r="4" fill="#fff"/><circle cx="29" cy="11" r="3.5" fill="#fff"/><circle cx="29" cy="29" r="3.5" fill="#fff"/><path d="M15.5 18.5L26 12.2M15.5 21.5L26 27.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#101322"/><circle cx="12" cy="20" r="4" fill="#F2B705"/><circle cx="29" cy="11" r="3.5" fill="#2BB673"/><circle cx="29" cy="29" r="3.5" fill="#CE1126"/><path d="M15.5 18.5L26 12.2M15.5 21.5L26 27.8" stroke="#F2B705" stroke-width="2" stroke-linecap="round"/></svg>
       Datalink Global
     </a>
     <div class="navlinks">
-      <a href="#services">Services</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <a href="#services">Services</a><a href="#packages">Packages</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
       <a href="tel:+233257263650"><i class="fa-solid fa-phone"></i> +233 25 726 3650</a>
       <a class="btn btn-primary" href="#contact">Book a free call</a>
     </div>
@@ -255,7 +263,7 @@ footer a:hover{color:#fff}
 </div>
 <div class="mobmenu" id="mobmenu">
   <button class="mobclose" id="mobclose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-  <a href="#services">Services</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  <a href="#services">Services</a><a href="#packages">Packages</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
   <a class="btn btn-primary" href="#contact">Book a free call</a>
 </div>
 
@@ -328,6 +336,15 @@ footer a:hover{color:#fff}
     <article class="svc reveal"><div class="imgwrap"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=70" data-fallback="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=70" alt="Business dashboard on a screen"></div><div class="body"><div class="badge"><i class="fa-solid fa-gears"></i></div><h3>Workflow automation</h3><p>Connect your sheets, CRM, email and invoicing so data moves on its own with no copy-paste.</p><a class="more" href="#contact">Learn more →</a></div></article>
     <article class="svc reveal"><div class="imgwrap"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=70" data-fallback="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=70" alt="Sales team discussing leads in a meeting"></div><div class="body"><div class="badge"><i class="fa-solid fa-bullseye"></i></div><h3>Lead generation systems</h3><p>Automated prospecting, outreach and follow-ups that keep your pipeline full.</p><a class="more" href="#contact">Learn more →</a></div></article>
     <article class="svc reveal"><div class="imgwrap"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=70" data-fallback="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=70" alt="Developer workspace with laptop"></div><div class="body"><div class="badge"><i class="fa-solid fa-puzzle-piece"></i></div><h3>Custom AI tools</h3><p>Internal dashboards, document processing and reporting tools built around how you work.</p><a class="more" href="#contact">Learn more →</a></div></article>
+  </div>
+</div></section>
+
+<section class="packages" id="packages"><div class="wrap">
+  <div class="center reveal"><span class="label">Packages</span><h2>Simple pricing in GH₵</h2><p class="lead">Fixed quotes, no hidden fees. Pay by Mobile Money or bank transfer. <span class="demo">demo prices, confirm</span></p></div>
+  <div class="grid3">
+    <div class="card pk reveal"><h3>Starter</h3><p>One automation that removes your biggest time-waster.</p><div class="price">GH₵ 1,500 <small>one-off</small></div><ul><li><i class="fa-solid fa-check"></i> 1 automation or workflow</li><li><i class="fa-solid fa-check"></i> Setup and testing</li><li><i class="fa-solid fa-check"></i> 7 days of support</li></ul><a class="btn btn-dark" href="#contact">Get started</a></div>
+    <div class="card pk feat reveal"><h3>Growth</h3><p>A WhatsApp AI agent plus the automations behind it.</p><div class="price">GH₵ 5,000 <small>one-off</small></div><ul><li><i class="fa-solid fa-check"></i> 1 WhatsApp or web AI agent</li><li><i class="fa-solid fa-check"></i> Up to 3 automations</li><li><i class="fa-solid fa-check"></i> Team training</li><li><i class="fa-solid fa-check"></i> 30 days of support</li></ul><a class="btn btn-primary" href="#contact">Get started</a></div>
+    <div class="card pk reveal"><h3>Custom</h3><p>A full AI system built around your business.</p><div class="price">Let's talk</div><ul><li><i class="fa-solid fa-check"></i> Custom AI tools and integrations</li><li><i class="fa-solid fa-check"></i> Lead generation system</li><li><i class="fa-solid fa-check"></i> Monthly support plan</li></ul><a class="btn btn-dark" href="#contact">Book a call</a></div>
   </div>
 </div></section>
 
@@ -419,7 +436,7 @@ footer a:hover{color:#fff}
 </div></section>
 </main>
 
-<footer><div class="wrap">
+<footer><div class="stripe"></div><div class="wrap">
   <div class="fgrid">
     <div><a href="#top" class="logo" style="color:#fff">Datalink Global</a><p style="margin-top:12px">AI and automation for Ghanaian businesses.</p>
       <div class="socials"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://wa.me/233257263650" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div>
