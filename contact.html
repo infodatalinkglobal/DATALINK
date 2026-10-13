@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your Pilot | Datalink Ghana — GH₵300</title>
+  <meta name="description"
+    content="Start your WhatsApp AI agent pilot for GH₵300. Live in 48 hours. 30-day free trial. Reply within 2 hours.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Data<span>link</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Pricing</a>
+        <a href="portfolio.html">Live Demo</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="nav-cta">Start Pilot — GH₵300</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Start Your 30-Day Pilot</h1>
+      <p>Fill in the form below and I'll reply on WhatsApp within 2 hours to arrange your setup.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section>
+    <div class="container contact-grid">
+
+      <!-- ===== Form ===== -->
+      <div class="form-card">
+        <!-- PLACEHOLDER: Replace YOUR_FORMSPREE_ID with your real Formspree form ID
+             (create a free form at https://formspree.io → copy the ID from the endpoint URL) -->
+        <form id="pilot-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+
+          <div class="form-group">
+            <label for="fullname">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+            <span class="error-msg">Please enter your full name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+233 or 0XXXXXXXXX" required>
+            <p class="helper">This is how I'll contact you to get started</p>
+            <span class="error-msg">Please enter a valid Ghana number (+233XXXXXXXXX or 0XXXXXXXXX).</span>
+          </div>
+
+          <div class="form-group">
+            <label for="business-name">Business Name <span class="req">*</span></label>
+            <input type="text" id="business-name" name="business-name" placeholder="e.g. Akosua Boutique" required>
+            <span class="error-msg">Please enter your business name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="business-type">Business Type <span class="req">*</span></label>
+            <select id="business-type" name="business-type" required>
+              <option value="">Please select...</option>
+              <option>Fashion &amp; Clothing</option>
+              <option>Pharmacy / Health</option>
+              <option>Real Estate</option>
+              <option>Salon / Beauty / Spa</option>
+              <option>Catering / Restaurant</option>
+              <option>Photography / Videography</option>
+              <option>Online Store / E-commerce</option>
+              <option>School / Education</option>
+              <option>Construction / Contracting</option>
+              <option>Other (describe in message)</option>
+            </select>
+            <span class="error-msg">Please select your business type.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="enquiries">How many WhatsApp enquiries do you receive per day? <span
+                class="req">*</span></label>
+            <select id="enquiries" name="enquiries-per-day" required>
+              <option value="">Please select...</option>
+              <option>Fewer than 5</option>
+              <option>5 to 20</option>
+              <option>20 to 50</option>
+              <option>More than 50</option>
+              <option>I'm not sure</option>
+            </select>
+            <span class="error-msg">Please select an option.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="problem">What is your biggest WhatsApp problem right now? <span class="req">*</span></label>
+            <textarea id="problem" name="biggest-problem" rows="4"
+              placeholder="e.g. I miss messages at night, I spend all day answering the same price questions, customers enquire but I forget to follow up..."
+              required></textarea>
+            <span class="error-msg">Please tell me about your biggest WhatsApp problem.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Which plan are you interested in? (optional)</label>
+            <div class="radio-cards">
+              <label class="radio-card">
+                <input type="radio" name="plan" value="GH₵300 Pilot">
+                <span>GH₵300 Pilot — 30 days free, then choose a plan</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="plan" value="Starter GH₵150/month">
+                <span>Starter — GH₵150/month after pilot</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="plan" value="Standard GH₵250/month">
+                <span>Standard — GH₵250/month after pilot</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="plan" value="Growth GH₵400/month">
+                <span>Growth — GH₵400/month after pilot</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="plan" value="Not sure — advise me">
+                <span>Not sure — advise me</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send My Request →</button>
+
+          <p class="form-small-print">
+            🛡️ 7-day money-back guarantee. No spam. I'll reply on WhatsApp within 2 hours.
+          </p>
+
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+
+      <!-- ===== Direct contact column ===== -->
+      <div class="direct-card">
+        <h3>Prefer to Message Directly?</h3>
+
+        <!-- PLACEHOLDER: Replace 233XXXXXXXXX with your real WhatsApp number (no + sign) -->
+        <a class="btn btn-whatsapp btn-lg btn-block" target="_blank" rel="noopener"
+          href="https://wa.me/233XXXXXXXXX?text=Hi%20Datalink%2C%20I%27d%20like%20to%20start%20a%2030-day%20pilot%20for%20my%20WhatsApp%20AI%20agent.">
+          💬 WhatsApp Me Now
+        </a>
+
+        <!-- PLACEHOLDER: Replace with your real email address -->
+        <p class="alt-contact">Or send your questions to <a href="mailto:hello@example.com">hello@example.com</a></p>
+
+        <hr class="divider">
+
+        <h3>What Happens After You Submit:</h3>
+        <div class="timeline">
+          <div class="timeline-step">
+            <strong>Step 1 — Within 2 hours</strong>
+            <p>I reply on WhatsApp to confirm your request and answer any questions.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>Step 2 — Within 24 hours</strong>
+            <p>We have a quick 15-minute call or chat to understand your business and products.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>Step 3 — Payment</strong>
+            <p>You send GH₵300 via Mobile Money. I send you a payment confirmation.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>Step 4 — Within 48 hours</strong>
+            <p>Your agent is live on WhatsApp and tested. I show you the Google Sheet dashboard.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>Step 5 — 30-day pilot begins</strong>
+            <p>Your agent handles customer enquiries. I monitor and fix any issues in the first week.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">Data<span>link</span></a>
+          <p class="footer-tagline">
+            WhatsApp AI Agents for Ghanaian Businesses.
+            Start for GH₵300. 30-day pilot. 7-day guarantee.
+          </p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services &amp; Pricing</a></li>
+            <li><a href="portfolio.html">Live Demo</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Why It Works</h4>
+          <ul class="footer-why">
+            <li>✅ Trained on your products only</li>
+            <li>✅ English and Twi support</li>
+            <li>✅ Google Sheet lead dashboard</li>
+            <li>✅ 7-day money-back guarantee</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Datalink. Built in Ghana 🇬🇭
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <!-- PLACEHOLDER: Replace 233XXXXXXXXX with your real WhatsApp number (no + sign) -->
+  <a class="wa-float" aria-label="Chat with Datalink on WhatsApp" target="_blank" rel="noopener"
+    href="https://wa.me/233XXXXXXXXX?text=Hi%20Datalink%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20AI%20Agent%20for%20my%20business.">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.004 3C9.382 3 4 8.382 4 15.004c0 2.65.87 5.1 2.34 7.09L4.06 28.6a.9.9 0 0 0 1.12 1.12l6.6-2.27a11.94 11.94 0 0 0 4.23.77c6.62 0 12-5.38 12-12.01C28.01 8.38 22.63 3 16 3zm0 2c5.52 0 10 4.48 10 10.01 0 5.52-4.48 10-10 10-1.5 0-2.92-.33-4.2-.92a.9.9 0 0 0-.67-.04l-4.57 1.57 1.59-4.5a.9.9 0 0 0-.08-.76A9.93 9.93 0 0 1 6 15.01C6 9.48 10.48 5 16 5zm-3.68 5.02c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.07 3.31 5.11 4.51 2.53 1 3.05.8 3.6.75.55-.05 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5z" />
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
