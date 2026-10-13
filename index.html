@@ -66,9 +66,6 @@ h2{font-size:clamp(34px,5vw,52px);margin-bottom:16px}
 
 /* header */
 .site-header{position:fixed;top:0;left:0;width:100%;z-index:1000}
-.topstrip{background:var(--primary);color:#fff;text-align:center;padding:9px 6vw;font-size:13px;overflow:hidden;max-height:80px;opacity:1;transition:max-height .4s,opacity .3s,padding .35s}
-.topstrip span{margin:0 12px;white-space:nowrap}
-.site-header.scrolled .topstrip{max-height:0;opacity:0;padding-top:0;padding-bottom:0}
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:84px;background:var(--paper);transition:height .35s,box-shadow .35s}
 .site-header.scrolled nav{height:64px;box-shadow:0 8px 26px rgba(0,0,0,.10)}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:20px}
@@ -84,12 +81,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 6vw;
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:1100}
 
 /* hero */
-.hero{position:relative;color:#fff;padding:190px 0 100px;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+.hero{position:relative;color:#fff;padding:150px 0 90px;overflow:hidden;min-height:100vh;display:flex;align-items:center}
 .hero-bg{position:absolute;inset:-6% 0;z-index:0}
 .hero-bg .imgwrap{width:100%;height:100%}
 .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(16,19,34,.94) 20%,rgba(16,19,34,.72) 60%,rgba(16,19,34,.55))}
-.hero-gloss{position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:2;pointer-events:none;background:linear-gradient(105deg,transparent,rgba(255,255,255,.07),transparent);transform:skewX(-18deg);animation:gloss 8s ease-in-out infinite}
-@keyframes gloss{0%{left:-60%}55%,100%{left:130%}}
 .hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;width:100%}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px}
 .hero h1{font-size:clamp(42px,6.2vw,72px);margin-bottom:22px}
@@ -112,11 +107,6 @@ form .btn{width:100%}
 .form-success{text-align:center;padding:30px 10px}
 .form-success i{font-size:44px;color:var(--accent);margin-bottom:12px}
 
-/* marquee */
-.marquee{background:var(--accent);color:var(--ink);overflow:hidden;padding:14px 0;font-weight:600;font-size:15px}
-.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 32s linear infinite}
-.marquee-track span::before{content:"\2726";margin-right:48px;opacity:.7}
-@keyframes scroll{to{transform:translateX(-50%)}}
 
 /* steps */
 .steps{background:var(--cream)}
@@ -219,7 +209,6 @@ footer a:hover{color:#fff}
   section{padding:68px 0}
   .navlinks{display:none}.burger{display:block}
   nav{height:68px}
-  .topstrip span:nth-child(n+3){display:none}
   .hero{padding:150px 0 70px;min-height:0}
   .grid4,.grid2{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
@@ -287,6 +276,33 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
 .timeline b{display:block;color:#fff}
 @media(max-width:980px){.panel.on{grid-template-columns:1fr}.about{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
 @media(max-width:760px){.herostats{grid-template-columns:1fr}.flagship{padding:26px}.guarantee{flex-direction:column;text-align:center}}
+
+.bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vscrim{position:absolute;inset:0;z-index:0;background:rgba(16,19,34,.62)}
+.vscrim.heavy{background:rgba(16,19,34,.78)}
+.demosec,.ctaband{position:relative;overflow:hidden}
+.demosec>.wrap,.ctaband>.wrap{position:relative;z-index:1}
+.whyus-bg{position:absolute;inset:0;z-index:0;opacity:1;overflow:hidden}
+.ctaband{background:var(--ink);color:#fff}.ctaband h2{color:#fff}.ctaband .lead{color:#d5d9ea}
+.ok{color:var(--green)}.no{color:#b6bccd}
+.hero-bg{inset:0}
+
+/* refinement */
+.btn{border-radius:10px;letter-spacing:.01em}
+.card,.svc,.quote,.formcard,.flagship,.guarantee,.tablewrap,.phone{border-radius:12px}
+.card:hover{transform:none;box-shadow:var(--shadow-sm)}
+.badge{border-radius:10px;width:46px;height:46px;font-size:19px}
+.label{letter-spacing:.2em;font-size:12px}
+h2{letter-spacing:-.02em}
+.hero h1{letter-spacing:-.03em}
+.eyebrow{border-left:3px solid var(--accent);padding-left:12px}
+nav{border-bottom:1px solid var(--line)}
+.herostats div{border-radius:10px;background:rgba(255,255,255,.06)}
+.tab{border-radius:8px}.pk.feat::before{border-radius:6px}
+.socials a{border-radius:8px}
+.logo,.navlinks a{white-space:nowrap}
+@media(max-width:1100px){.navlinks a[href^="tel"]{display:none}.navlinks{gap:20px}}
+@media(max-width:900px){.navlinks{display:none}.burger{display:block}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -294,7 +310,6 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
 <div id="progress"></div>
 
 <div class="site-header" id="siteHeader">
-  <div class="topstrip"><span>Built in Ghana 🇬🇭</span><span>GH₵300 pilot, 30 days free after setup</span><span>7-day money-back guarantee</span><span>Live within 48 hours</span></div>
   <nav id="nav">
     <a href="#top" class="logo" aria-label="Datalink Global home">
       <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#101322"/><circle cx="12" cy="20" r="4" fill="#F2B705"/><circle cx="29" cy="11" r="3.5" fill="#2BB673"/><circle cx="29" cy="29" r="3.5" fill="#CE1126"/><path d="M15.5 18.5L26 12.2M15.5 21.5L26 27.8" stroke="#F2B705" stroke-width="2" stroke-linecap="round"/></svg>
@@ -316,11 +331,11 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
 
 <main id="top">
 <header class="hero">
-  <div class="hero-bg"><div class="imgwrap"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=70" data-fallback="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1800&q=70" alt="Circuit board representing AI technology" fetchpriority="high" decoding="async"></div></div>
-  <div class="hero-scrim"></div><div class="hero-gloss"></div>
+  <div class="hero-bg"><video class="bgvid" id="heroVideo" muted loop playsinline preload="none" poster="media/hero.jpg" aria-hidden="true"><source data-src="media/hero.mp4" type="video/mp4"></video></div>
+  <div class="hero-scrim"></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">🇬🇭 Built for Ghanaian businesses on WhatsApp</span>
+      <span class="eyebrow">Built for Ghanaian businesses on WhatsApp</span>
       <h1><span class="w"><span class="hero-word">Your</span></span> <span class="w"><span class="hero-word">business</span></span> <span class="w"><span class="hero-word">answers</span></span> <span class="w"><span class="hero-word">customers</span></span> <span class="w"><span class="hero-word">while</span></span> <span class="w"><span class="hero-word">you</span></span> <span class="w"><span class="hero-word">sleep.</span></span></h1>
       <p class="sub">Datalink builds WhatsApp AI agents trained on your products and prices. Your customers get instant, accurate answers 24/7. You only step in when someone is ready to buy.</p>
       <div class="ctas">
@@ -334,24 +349,19 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
       </div>
     </div>
     <div class="phone reveal" aria-label="Example WhatsApp conversation">
-      <div class="phone-top"><span class="av">🛍️</span><div><b>Your Business</b><small>online, replies instantly</small></div></div>
+      <div class="phone-top"><span class="av">YB</span><div><b>Your Business</b><small>online, replies instantly</small></div></div>
       <div class="chat">
         <div class="b in">Hi, do you have ladies sandals in size 40?</div>
-        <div class="b out">Yes! We have size 40 sandals in black, brown, and nude. Prices start from GH₵95. Would you like to see photos or reserve a pair? 😊</div>
+        <div class="b out">Yes! We have size 40 sandals in black, brown, and nude. Prices start from GH₵95. Would you like to see photos or reserve a pair? </div>
         <div class="b in">The black ones please. How much?</div>
-        <div class="b out">The black sandals in size 40 are GH₵110. We're open Monday to Saturday, 9am to 7pm at Osu, Accra. Shall I reserve them for you? 🛍️</div>
+        <div class="b out">The black sandals in size 40 are GH₵110. We're open Monday to Saturday, 9am to 7pm at Osu, Accra. Shall I reserve them for you? </div>
         <div class="b in">Yes! My name is Ama</div>
-        <div class="b out">Perfect Ama! Reserved for you ✅ Our team will confirm on WhatsApp shortly. See you soon! 🎉</div>
+        <div class="b out">Perfect Ama! Reserved for you  Our team will confirm on WhatsApp shortly. See you soon! </div>
       </div>
       <p class="phone-note">This entire conversation happened at 11:47pm with zero staff involvement.</p>
     </div>
   </div>
 </header>
-
-<div class="marquee" aria-hidden="true"><div class="marquee-track">
-  <span>WhatsApp AI agents</span><span>English and Twi</span><span>Leads logged to your Google Sheet</span><span>Hot lead alerts</span><span>7-day money-back guarantee</span><span>Built in Ghana</span>
-  <span>WhatsApp AI agents</span><span>English and Twi</span><span>Leads logged to your Google Sheet</span><span>Hot lead alerts</span><span>7-day money-back guarantee</span><span>Built in Ghana</span>
-</div></div>
 
 <section><div class="wrap">
   <div class="center reveal"><span class="label">Sound familiar?</span><h2>Three problems every Ghanaian business on WhatsApp knows</h2></div>
@@ -376,7 +386,7 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
 <section id="services"><div class="wrap">
   <div class="center reveal"><span class="label">What we build</span><h2>One flagship agent, plus specialists</h2><p class="lead">All agents start with a 30-day paid pilot at GH₵300. You only continue if you're satisfied.</p></div>
   <div class="flagship reveal">
-    <span class="tag">⭐ Flagship service</span>
+    <span class="tag">Flagship service</span>
     <h3>WhatsApp customer enquiry and lead qualification agent</h3>
     <p>An AI agent that lives on your WhatsApp Business number. It answers your customers' questions instantly, using only your real products, prices and policies. When a customer is ready to buy, you get an immediate WhatsApp alert. Every conversation and lead is logged to your Google Sheet.</p>
     <ul class="two">
@@ -399,7 +409,7 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
   </div>
 </div></section>
 
-<section class="whyus"><div class="whyus-bg"><div class="imgwrap"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=60" data-fallback="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=60" alt="Laptop with code on screen"></div></div>
+<section class="whyus"><div class="whyus-bg"><video class="bgvid" muted loop playsinline preload="none" poster="media/city.jpg" aria-hidden="true"><source data-src="media/city.mp4" type="video/mp4"></video></div><div class="vscrim"></div>
   <div class="wrap">
     <div class="reveal"><span class="label" style="color:var(--accent-2)">Why Datalink</span><h2>Built in Ghana, for how Ghanaian businesses actually work.</h2>
     <ul class="checks">
@@ -430,13 +440,13 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
     <thead><tr><th>Feature</th><th>Starter</th><th class="pop">Standard<span>Most popular</span></th><th>Growth</th></tr></thead>
     <tbody>
       <tr><td>Monthly conversations</td><td>500</td><td>2,000</td><td>10,000</td></tr>
-      <tr><td>WhatsApp integration</td><td>✅</td><td>✅</td><td>✅</td></tr>
-      <tr><td>Lead logging to Sheet</td><td>✅</td><td>✅</td><td>✅</td></tr>
-      <tr><td>Hot lead WhatsApp alerts</td><td>✅</td><td>✅</td><td>✅</td></tr>
-      <tr><td>English and Twi support</td><td>✅</td><td>✅</td><td>✅</td></tr>
+      <tr><td>WhatsApp integration</td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
+      <tr><td>Lead logging to Sheet</td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
+      <tr><td>Hot lead WhatsApp alerts</td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
+      <tr><td>English and Twi support</td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
       <tr><td>Knowledge base updates</td><td>1 per month</td><td>4 per month</td><td>Unlimited</td></tr>
-      <tr><td>Monthly performance report</td><td>❌</td><td>✅</td><td>✅</td></tr>
-      <tr><td>Priority WhatsApp support</td><td>❌</td><td>❌</td><td>✅</td></tr>
+      <tr><td>Monthly performance report</td><td><i class="fa-solid fa-minus no" aria-label="Not included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
+      <tr><td>Priority WhatsApp support</td><td><i class="fa-solid fa-minus no" aria-label="Not included"></i></td><td><i class="fa-solid fa-minus no" aria-label="Not included"></i></td><td><i class="fa-solid fa-check ok" aria-label="Included"></i></td></tr>
       <tr class="fee"><td>Monthly fee</td><td>GH₵150/mo</td><td>GH₵250/mo</td><td>GH₵400/mo</td></tr>
     </tbody>
   </table></div>
@@ -457,19 +467,19 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
   </div>
 </div></section>
 
-<section class="demosec" id="demo"><div class="wrap">
+<section class="demosec" id="demo"><video class="bgvid" muted loop playsinline preload="none" poster="media/band-a.jpg" aria-hidden="true"><source data-src="media/band-a.mp4" type="video/mp4"></video><div class="vscrim heavy"></div><div class="wrap">
   <div class="center reveal"><span class="label" style="color:var(--accent-2)">Live demo</span><h2>One agent, many industries</h2><p class="lead">Example conversations from Ghanaian business scenarios. Switch between four business types.</p></div>
   <div class="tabs reveal" role="tablist">
-    <button class="tab on" data-tab="t1">👗 Boutique</button><button class="tab" data-tab="t2">💊 Pharmacy</button><button class="tab" data-tab="t3">🏠 Real estate</button><button class="tab" data-tab="t4">💇‍♀️ Salon</button>
+    <button class="tab on" data-tab="t1">Boutique</button><button class="tab" data-tab="t2">Pharmacy</button><button class="tab" data-tab="t3">Real estate</button><button class="tab" data-tab="t4">Salon</button>
   </div>
   <div class="panels reveal">
-    <div class="panel on" id="t1"><div class="phone"><div class="phone-top"><span class="av">🛍️</span><div><b>Akosua Boutique</b><small>typically replies instantly</small></div></div><div class="chat">
+    <div class="panel on" id="t1"><div class="phone"><div class="phone-top"><span class="av">AB</span><div><b>Akosua Boutique</b><small>typically replies instantly</small></div></div><div class="chat">
       <div class="b in">Good evening please, do you have the ankara jumpsuit I saw on your page? Size 12<i>11:48 PM</i></div>
-      <div class="b out">Good evening! 😊 Yes, we have the ankara jumpsuit in size 12. It's available in two colours: royal blue and burnt orange. Price is GH₵185. Which colour do you prefer?<i>11:48 PM</i></div>
+      <div class="b out">Good evening!  Yes, we have the ankara jumpsuit in size 12. It's available in two colours: royal blue and burnt orange. Price is GH₵185. Which colour do you prefer?<i>11:48 PM</i></div>
       <div class="b in">The blue one. Can you deliver to Tema?<i>11:49 PM</i></div>
-      <div class="b out">Yes! We deliver to Tema. Delivery fee is GH₵25 and takes 1 to 2 business days. Total would be GH₵210. Shall I reserve the blue ankara jumpsuit in size 12 for you? 🎉<i>11:49 PM</i></div>
+      <div class="b out">Yes! We deliver to Tema. Delivery fee is GH₵25 and takes 1 to 2 business days. Total would be GH₵210. Shall I reserve the blue ankara jumpsuit in size 12 for you? <i>11:49 PM</i></div>
       <div class="b in">Yes please. My name is Sandra<i>11:49 PM</i></div>
-      <div class="b out">Perfect Sandra! ✅ Reserved for you. We'll send payment details shortly. Thank you for shopping with Akosua Boutique! 🛍️<i>11:50 PM</i></div>
+      <div class="b out">Perfect Sandra!  Reserved for you. We'll send payment details shortly. Thank you for shopping with Akosua Boutique! <i>11:50 PM</i></div>
     </div></div>
     <div class="happened"><h3>What just happened</h3><ul>
       <li><i class="fa-solid fa-check"></i> 11:48 PM: customer enquires after hours</li>
@@ -478,29 +488,29 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
       <li><i class="fa-solid fa-check"></i> Delivery question answered with the exact fee</li>
       <li><i class="fa-solid fa-check"></i> Customer name collected automatically</li>
       <li><i class="fa-solid fa-check"></i> 11:50 PM: lead logged to Google Sheet</li>
-      <li><i class="fa-solid fa-check"></i> Owner notified: "🔥 Hot lead, Sandra, Tema delivery"</li>
+      <li><i class="fa-solid fa-check"></i> Owner notified: " Hot lead, Sandra, Tema delivery"</li>
       <li><i class="fa-solid fa-check"></i> Under 10 seconds per message</li>
     </ul><p>This sale happened at midnight. The boutique owner was asleep. The agent handled everything.</p></div></div>
 
-    <div class="panel" id="t2"><div class="phone"><div class="phone-top"><span class="av">💊</span><div><b>MedPlus Pharmacy</b><small>typically replies instantly</small></div></div><div class="chat">
+    <div class="panel" id="t2"><div class="phone"><div class="phone-top"><span class="av">MP</span><div><b>MedPlus Pharmacy</b><small>typically replies instantly</small></div></div><div class="chat">
       <div class="b in">Please do you have Amoxicillin 500mg?</div>
-      <div class="b out">Yes, we have Amoxicillin 500mg in stock. A pack of 15 capsules is GH₵18. We're open Monday to Saturday 7am to 9pm and Sunday 9am to 5pm at Lapaz, Accra. Do you need anything else? 💊</div>
+      <div class="b out">Yes, we have Amoxicillin 500mg in stock. A pack of 15 capsules is GH₵18. We're open Monday to Saturday 7am to 9pm and Sunday 9am to 5pm at Lapaz, Accra. Do you need anything else? </div>
       <div class="b in">Yes, Paracetamol too</div>
-      <div class="b out">Paracetamol 500mg (pack of 16) is GH₵5. So Amoxicillin + Paracetamol = GH₵23 total. Would you like to come in today or shall we reserve these for you? 🙂</div>
+      <div class="b out">Paracetamol 500mg (pack of 16) is GH₵5. So Amoxicillin + Paracetamol = GH₵23 total. Would you like to come in today or shall we reserve these for you? </div>
     </div></div></div>
 
-    <div class="panel" id="t3"><div class="phone"><div class="phone-top"><span class="av">🏠</span><div><b>Bright Properties</b><small>typically replies instantly</small></div></div><div class="chat">
+    <div class="panel" id="t3"><div class="phone"><div class="phone-top"><span class="av">BP</span><div><b>Bright Properties</b><small>typically replies instantly</small></div></div><div class="chat">
       <div class="b in">Hi I'm looking for a 2 bedroom apartment to rent in East Legon. Budget around 3000 cedis</div>
-      <div class="b out">Hello! 👋 Great, I can help with that. We have 2-bedroom apartments in East Legon. A few quick questions so I can find the best match: 1. Do you need the apartment furnished or unfurnished? 2. When would you like to move in?</div>
+      <div class="b out">Hello!  Great, I can help with that. We have 2-bedroom apartments in East Legon. A few quick questions so I can find the best match: 1. Do you need the apartment furnished or unfurnished? 2. When would you like to move in?</div>
       <div class="b in">Unfurnished. Move in next month</div>
-      <div class="b out">Perfect. We have an unfurnished 2-bed in East Legon at GH₵2,800/month, within your budget. May I have your name and the best time for our agent to call you to arrange a viewing? 😊</div>
+      <div class="b out">Perfect. We have an unfurnished 2-bed in East Legon at GH₵2,800/month, within your budget. May I have your name and the best time for our agent to call you to arrange a viewing? </div>
     </div></div></div>
 
-    <div class="panel" id="t4"><div class="phone"><div class="phone-top"><span class="av">💇‍♀️</span><div><b>Glam Studio</b><small>typically replies instantly</small></div></div><div class="chat">
+    <div class="panel" id="t4"><div class="phone"><div class="phone-top"><span class="av">GS</span><div><b>Glam Studio</b><small>typically replies instantly</small></div></div><div class="chat">
       <div class="b in">Hello please how much is full sew-in weave?</div>
-      <div class="b out">Hi! 😊 Full sew-in weave at Glam Studio is GH₵250 including wash and blow-dry. We're available Tuesday to Sunday. Would you like to book an appointment? I can check our availability for you right now.</div>
+      <div class="b out">Hi!  Full sew-in weave at Glam Studio is GH₵250 including wash and blow-dry. We're available Tuesday to Sunday. Would you like to book an appointment? I can check our availability for you right now.</div>
       <div class="b in">Yes Saturday please</div>
-      <div class="b out">We have slots available this Saturday at 10am, 1pm, and 3pm. Which time works best for you? Also, what's your name? 😊</div>
+      <div class="b out">We have slots available this Saturday at 10am, 1pm, and 3pm. Which time works best for you? Also, what's your name? </div>
     </div></div></div>
   </div>
   <div class="herostats dstat reveal">
@@ -527,9 +537,9 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
 <section class="steps"><div class="wrap">
   <div class="center reveal"><span class="label">Does it pay for itself?</span><h2>Three example scenarios</h2></div>
   <div class="grid3">
-    <div class="card roi reveal"><h3>👗 Clothing boutique</h3><p>Receives 30 WhatsApp enquiries a day and converts about 5% manually. With the agent answering instantly 24/7, conversion improves to 7%. That's 2 extra sales a week. At GH₵150 average order, that's GH₵1,200 extra a month against a GH₵150 agent cost.</p><b>ROI: 8x</b></div>
-    <div class="card roi reveal"><h3>🏠 Real estate agent</h3><p>Receives 20 enquiries a week and follows up with about 30% manually. The agent follows up with 100% and qualifies every lead. One extra closed deal a month at GH₵2,000 commission against a GH₵200 agent cost.</p><b>ROI: 10x</b></div>
-    <div class="card roi reveal"><h3>💊 Pharmacy</h3><p>Customers constantly ask about medicine availability and staff spend 2 hours daily answering WhatsApp. The agent handles it so staff can focus on dispensing, against a GH₵150 agent cost.</p><b>Saves 60 staff hours a month</b></div>
+    <div class="card roi reveal"><h3>Clothing boutique</h3><p>Receives 30 WhatsApp enquiries a day and converts about 5% manually. With the agent answering instantly 24/7, conversion improves to 7%. That's 2 extra sales a week. At GH₵150 average order, that's GH₵1,200 extra a month against a GH₵150 agent cost.</p><b>ROI: 8x</b></div>
+    <div class="card roi reveal"><h3>Real estate agent</h3><p>Receives 20 enquiries a week and follows up with about 30% manually. The agent follows up with 100% and qualifies every lead. One extra closed deal a month at GH₵2,000 commission against a GH₵200 agent cost.</p><b>ROI: 10x</b></div>
+    <div class="card roi reveal"><h3>Pharmacy</h3><p>Customers constantly ask about medicine availability and staff spend 2 hours daily answering WhatsApp. The agent handles it so staff can focus on dispensing, against a GH₵150 agent cost.</p><b>Saves 60 staff hours a month</b></div>
   </div>
   <p class="center disc">These are illustrative examples. Actual results depend on your business type, message volume and product margins.</p>
   <blockquote class="bigquote reveal">"If this agent converts just ONE extra sale per month, it has already paid for itself."</blockquote>
@@ -542,7 +552,7 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
     <p>Datalink is my answer to that. I build WhatsApp AI agents specifically for Ghanaian businesses, trained on your exact products, connected to your existing WhatsApp number, and priced at what makes sense here. When something breaks, you reach me directly, in Ghana, the same day.</p>
     <p class="sig">Founder, Datalink Global</p></div>
   <div class="grid1 reveal">
-    <div class="card"><div class="badge">🇬🇭</div><h3>Built for Ghana</h3><p>Every decision, from pricing and language support to WhatsApp integration and Mobile Money payment, is designed for how Ghanaian businesses operate.</p></div>
+    <div class="card"><div class="badge"><i class="fa-solid fa-flag"></i></div><h3>Built for Ghana</h3><p>Every decision, from pricing and language support to WhatsApp integration and Mobile Money payment, is designed for how Ghanaian businesses operate.</p></div>
     <div class="card"><div class="badge"><i class="fa-solid fa-lock"></i></div><h3>No invented facts</h3><p>Your agent never guesses. It only answers using information you provide. If it doesn't know, it says so and connects to you.</p></div>
     <div class="card"><div class="badge"><i class="fa-solid fa-phone"></i></div><h3>Real local support</h3><p>You WhatsApp me directly. No helpdesk, no ticket system, no waiting three days for a reply.</p></div>
   </div>
@@ -616,10 +626,10 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
   </div>
 </div></section>
 
-<section class="ctaband"><div class="wrap reveal">
+<section class="ctaband"><video class="bgvid" muted loop playsinline preload="none" poster="media/band-b.jpg" aria-hidden="true"><source data-src="media/band-b.mp4" type="video/mp4"></video><div class="vscrim heavy"></div><div class="wrap reveal">
   <h2>Stop losing sales to unanswered messages</h2>
   <p class="lead">Start your 30-day pilot for GH₵300. Your agent will be live on WhatsApp within 48 hours. If it doesn't work in the first 7 days, you get a full refund.</p>
-  <a class="btn btn-primary" href="#contact">Start my pilot, GH₵300</a> <a class="btn btn-dark" href="#demo">See a live demo first</a>
+  <a class="btn btn-primary" href="#contact">Start my pilot, GH₵300</a> <a class="btn btn-ghost" href="#demo">See a live demo first</a>
 </div></section>
 </main>
 
@@ -631,7 +641,7 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
     <div><h4>Why it works</h4><ul><li>Trained on your products only</li><li>English and Twi support</li><li>Google Sheet lead dashboard</li><li>7-day money-back guarantee</li></ul></div>
     <div><h4>Contact</h4><ul><li>Accra, Ghana</li><li><a href="tel:+233257263650">+233 25 726 3650</a></li><li><a href="mailto:info.datalinkglobal@gmail.com">info.datalinkglobal@gmail.com</a></li></ul></div>
   </div>
-  <div class="fbottom"><span>Built in Ghana 🇬🇭</span><span>© <span id="yr"></span> Datalink Global. All rights reserved.</span></div>
+  <div class="fbottom"><span>Built in Ghana</span><span>© <span id="yr"></span> Datalink Global. All rights reserved.</span></div>
 </div></footer>
 
 <div class="fab"><a class="wa" href="https://wa.me/233257263650" target="_blank" rel="noopener" data-tip="Chat on WhatsApp" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a class="call" href="tel:+233257263650" data-tip="Call us" aria-label="Call us"><i class="fa-solid fa-phone"></i></a></div>
@@ -651,6 +661,17 @@ tr.fee td{font-weight:800;font-size:18px;background:var(--cream)}
   var head=document.getElementById('siteHeader');
   function onScroll(){var y=window.scrollY||window.pageYOffset;head.classList.toggle('scrolled',y>60);var h=document.body.scrollHeight-innerHeight;var p=document.getElementById('progress');if(p)p.style.width=(h>0?y/h*100:0)+'%';}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // background videos: wide screens + good connections only, load when near view, pause when off-screen
+  (function(){
+    var c=navigator.connection||{},save=c.saveData===true,slow=/(^|-)(2g|slow-2g)$/.test(c.effectiveType||''),big=matchMedia('(min-width:768px)').matches;
+    if(reduce||!big||save||slow)return;
+    var vids=document.querySelectorAll('video.bgvid');
+    function load(v){var src=v.querySelector('source');if(src&&!src.src){src.src=src.getAttribute('data-src');v.load();}}
+    if(!('IntersectionObserver' in window)){vids.forEach(function(v){load(v);v.play&&v.play().catch(function(){});});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){load(v);var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{rootMargin:'200px'});
+    vids.forEach(function(v){io.observe(v);});
+  })();
 
   var mm=document.getElementById('mobmenu');
   document.getElementById('burger').addEventListener('click',function(){mm.classList.add('open');});
