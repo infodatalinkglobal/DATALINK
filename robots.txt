@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://infodatalinkglobal.github.io/DATALINK/sitemap.xml
